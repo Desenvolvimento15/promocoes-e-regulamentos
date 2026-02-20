@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupons e Promoções</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            color: #000;
+            padding: 20px;
+        }
+
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* ===== LEVEL 1 ===== */
+        .main-header {
+            padding: 18px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            border-top: 1px solid #999;
+            border-bottom: 1px solid #999;
+        }
+
+        .main-header .icon {
+            font-size: 18px;
+        }
+
+        .main-content {
+            display: none;
+        }
+
+        /* ===== LEVEL 2 ===== */
+        .accordion-item {
+            border-bottom: 2px solid #000;
+        }
+
+        .accordion-title {
+            background: #ededed;
+            padding: 16px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-title .icon {
+            font-size: 18px;
+        }
+
+        .accordion-content {
+            display: none;
+        }
+
+        .accordion-inner {
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* ===== CUPOM ===== */
+        .coupon-wrapper {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .coupon-box {
+            border: 1px solid #d9d9d9;
+            border-radius: 8px;
+            padding: 8px 14px;
+            min-width: 130px;
+            font-weight: bold;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        .coupon-box span {
+            color: #1a73e8;
+        }
+
+        .copy-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* COPIADO */
+        .copied .copy-btn {
+            background: #2e7d32;
+        }
+
+        .copied .copy-btn span {
+            display: none;
+        }
+
+        .copied .copy-btn::after {
+            content: "COPIADO!";
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .coupon-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- CUPONS -->
+        <div class="main-header">
+            <span>CUPONS DE DESCONTO</span>
+            <span class="icon">+</span>
+        </div>
+
+        <div class="main-content">
+
+            <div class="accordion-item">
+                <div class="accordion-title">
+                    <span>Cupom100OFF</span>
+                    <span class="icon">+</span>
+                </div>
+
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <p>
+                        Promoção não cumulativa com outras ofertas. O desconto máximo aplicado é de 50% sobre o valor total da compra. Ação
+                        exclusiva loja online e APP Riachuelo. Desconto aplicado direto na sacola de compras válido para apenas 1 (uma) compra
+                        por CPF no site oficial da Riachuelo por meio de uso de código promocional BEM-VINDO e com pagamentos somente via
+                        Cartões Riachuelo, exceto produtos de telefonia, beleza, áudio e relógios.
+                        </p>
+
+                        <div class="coupon-wrapper" id="coupon1">
+                            <div class="coupon-box">
+                                <span>CUPOM100OFF</span>
+                            </div>
+                            <button class="copy-btn" onclick="copyCoupon('CUPOM100OFF','coupon1')"><span>COPIAR</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-title">
+                                <span>Cupom100OFF</span>
+                                <span class="icon">+</span>
+                            </div>
+                        
+                            <div class="accordion-content">
+                                <div class="accordion-inner">
+                                    <p>
+                                        Promoção não cumulativa com outras ofertas. O desconto máximo aplicado é de 50% sobre o valor total da
+                                        compra. Ação exclusiva loja online e APP Riachuelo. Desconto aplicado direto na sacola de compras válido para apenas
+                                        1 (uma) compra por CPF no site oficial da Riachuelo por meio de uso de código promocional BEM-VINDO e com pagamentos
+                                        somente via Cartões Riachuelo, exceto produtos de telefonia, beleza, áudio e relógios.
+                                    </p>
+                        
+                                    <div class="coupon-wrapper" id="coupon1">
+                                        <div class="coupon-box">
+                                            <span>CUPOM100OFF</span>
+                                        </div>
+                                        <button class="copy-btn" onclick="copyCoupon('CUPOM100OFF','coupon1')">
+                                            <span>COPIAR</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        </div>
+
+        <!-- PROMOÇÕES -->
+        <div class="main-header">
+            <span>PROMOÇÕES</span>
+            <span class="icon">+</span>
+        </div>
+
+        <div class="main-content">
+            <div class="accordion-item">
+                <div class="accordion-title">
+                    <span>50% na segunda peça</span>
+                    <span class="icon">+</span>
+                </div>
+
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <p>
+                            Promoção válida enquanto durarem os estoques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        /* ===== LEVEL 1 ===== */
+        document.querySelectorAll(".main-header").forEach(header => {
+            header.addEventListener("click", () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector(".icon");
+
+                const isOpen = content.style.display === "block";
+
+                content.style.display = isOpen ? "none" : "block";
+                icon.textContent = isOpen ? "+" : "-";
+            });
+        });
+
+        /* ===== LEVEL 2 ===== */
+        document.querySelectorAll(".accordion-title").forEach(title => {
+            title.addEventListener("click", () => {
+                const content = title.nextElementSibling;
+                const icon = title.querySelector(".icon");
+
+                const isOpen = content.style.display === "block";
+
+                content.style.display = isOpen ? "none" : "block";
+                icon.textContent = isOpen ? "+" : "-";
+            });
+        });
+
+        /* ===== COPIAR ===== */
+        function copyCoupon(code, id) {
+            const wrapper = document.getElementById(id);
+            navigator.clipboard.writeText(code).then(() => {
+                wrapper.classList.add("copied");
+            });
+        }
+    </script>
+
+</body>
+
+</html>
